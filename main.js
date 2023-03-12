@@ -1,5 +1,9 @@
 onload = () =>{
     document.body.classList.remove("container");
 
-    audioElement.play();
+    document.addEventListener('click', musicPlay);
+    function musicPlay() {
+        document.getElementById('radio').play();
+        document.removeEventListener('click', musicPlay);
+    }
 }; 
