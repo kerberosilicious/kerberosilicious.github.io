@@ -1,26 +1,14 @@
 onload = () =>{
     document.body.classList.remove("container");
 
-
-
-var play = true;
-
-var myAudio = document.getElementById("leson");
-
-function onKeyDown(event) {
-        switch (event.keyCode) {
-            case 32: //SpaceBar                    
-                if (play) {
-                    myAudio.pause();
-                    play = false;
-                } else {
-                    myAudio.play();
-                    play = true;
-                }
-                break;
-        }
-  return false;
-}
-
-window.addEventListener("keydown", onKeyDown, false);
+var source = "Radiohead - No Surprises.mp3"
+var audio = document.createElement("audio");
+//
+audio.autoplay = true;
+//
+audio.load()
+audio.addEventListener("load", function() { 
+    audio.play(); 
+}, true);
+audio.src = source;
 }; 
